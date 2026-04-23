@@ -26,7 +26,7 @@ Mechanism-aware directed evolution platform for T7 RNA polymerase.  Explicitly d
 - Windows / Linux / macOS
 
 ### 安装依赖
-```bash
+```
 pip install -r requirements.txt
 
 启动 Web 界面
@@ -41,7 +41,7 @@ python site_scanner.py
 命令行：训练模型
 bash
 python train.py --config configs/default.yaml --output_dir outputs/exp_001
-
+```
 🏗️ 技术架构
 输入序列/突变
     │
