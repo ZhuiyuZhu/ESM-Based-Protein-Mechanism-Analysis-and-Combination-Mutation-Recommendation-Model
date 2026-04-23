@@ -52,8 +52,26 @@ T7_WT_SEQ = (
 
 
 class T7MechPredictor:
-    def __init__(self, checkpoint_path='outputs/exp_001/best_model.pt'):
+    def __init__(self, checkpoint_path=None):
         self.device = torch.device('cpu')
+        
+        # 自动探测模型路径
+        if checkpoint_path is None:
+            candidates = [
+                'outputs/exp_001/best_model.pt',
+                'best_model.pt',
+                'outputs/exp_001/best_model.pth'
+            ]
+            for c in candidates:
+                if os.path.exists(c):
+                    checkpoint_path = c
+                    break
+            if checkpoint_path is None:
+                raise FileNotFoundError(
+                    "Model not found. Expected one of: " + str(candidates) +
+                    ". Please upload best_model.pt to outputs/exp_001/ or repo root."
+                )
+        
         ckpt = torch.load(checkpoint_path, map_location=self.device)
         self.cfg = ckpt['config']
 
