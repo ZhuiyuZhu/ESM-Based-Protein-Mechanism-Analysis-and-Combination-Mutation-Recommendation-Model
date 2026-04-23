@@ -126,6 +126,7 @@ v0.4	MD 动态特征 + 机制因果推理	可解释性质变
 v0.5	Streamlit Cloud 部署 + 实验反馈闭环	在线工具	
 
 📂 项目结构
+```
 ├── app.py                    # Gradio Web 界面
 ├── train.py                  # 训练入口
 ├── evaluate.py               # 评估脚本
@@ -150,7 +151,7 @@ v0.5	Streamlit Cloud 部署 + 实验反馈闭环	在线工具
 └── outputs/
     └── exp_001/
         └── best_model.pt     # 训练好的权重
-
+```
 🤝 引用与致谢
  
 ESM-2: facebookresearch/esm
