@@ -127,7 +127,7 @@ def main():
     }
 
     best = float('inf')
-    patience = 10  # 新增：早停耐心值
+    patience = 5  # 新增：早停耐心值
     patience_counter = 0  # 新增
 
     for epoch in range(1, cfg['training']['num_epochs'] + 1):
